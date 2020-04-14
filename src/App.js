@@ -3,11 +3,8 @@ import './App.css';
 import Cardlist from './Cardlist'
 import axios from 'axios'
 
-
 function App() {
-
   const [flashcards,setFlashcards]=useState([])
-  console.log(flashcards)
   const [category,setCategories]=useState([])
   const categoryEl=useRef()
   const amountEl =useRef()
@@ -26,7 +23,6 @@ function App() {
    textArea.innerHTML=str;
    return textArea.value;
  }
-
  function handleSubmit(e){
    e.preventDefault();
    axios.get('https://opentdb.com/api.php',{params:{
