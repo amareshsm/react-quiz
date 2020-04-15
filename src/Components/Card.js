@@ -33,14 +33,14 @@ export default function Card({flashcard}){
             <div className="front" ref={frontEl}>
                 {flashcard.question}
                 <div className="flashcard-options">
-                   {flashcard.options.map((option,index)=>{
-                       return <div className="flashcard-option" key={index}>{option}</div>
+                   {flashcard.answers.map((answers,index)=>{
+                       return <div className="flashcard-option" key={index}>{answers}</div>
                    })}
                 </div>
 
             </div>
              <div className="back" ref={backEl}>
-                 {flashcard.answer}
+                 {flashcard.correct}
              </div>
         </div>
     )
