@@ -1,6 +1,6 @@
 import React from "react";
 
-const Result = ({score,amount, playAgain,ShowAnswers}) => (
+const Result = ({score,amount, playAgain,ShowAnswers,RetakeTest}) => (
   <div className="score-board">
     <div className="score">You scored {score} / {amount} correct answers!</div>
     <div>
@@ -9,6 +9,10 @@ const Result = ({score,amount, playAgain,ShowAnswers}) => (
     </button>
     <button className="option_btns" onClick={ShowAnswers}>
       Show Answers
+    </button>
+
+    <button className="option_btns" onClick={RetakeTest}>
+      Retest
     </button>
     </div>
   </div>

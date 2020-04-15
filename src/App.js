@@ -59,6 +59,15 @@ decodeString=(str)=>{
   return textArea.value;
 }
 
+
+Reteset=()=>{  
+  this.setState({
+    score:0,
+    responses:0
+  });
+  console.log(this.state.score,this.state.responses)
+}
+
  handleSubmit(e){
 
   this.setState({
@@ -149,7 +158,7 @@ componentDidMount(){
 
   {this.state.responses === this.state.amount ? (<Result  score={this.state.score} amount={this.state.amount} playAgain={this.playAgain}
   
-  ShowAnswers={this.ShowAnswers}
+  ShowAnswers={this.ShowAnswers}  RetakeTest={this.Reteset}
     />) : null}
     </div>
 
