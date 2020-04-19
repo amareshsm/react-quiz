@@ -116,7 +116,6 @@ Reteset=()=>{
 this.setState({
   showSubmitButton:true
 })
-
 }
 
 getCategories=()=>{
@@ -133,8 +132,7 @@ componentDidMount(){
  this.getCategories()
 }
 
-  render(){  
-
+  render(){ 
   return (
   <>
     <form className="header" onSubmit={this.handleSubmit}>
@@ -158,7 +156,6 @@ componentDidMount(){
 
     <div className="container">
     <div  className="title">Quiz Test</div>
-
     
 {this.state.DisplayAnswers===true ?<div className="answers">
     <Cardlist flashcards={this.state.setFlashcards}/>
@@ -166,14 +163,11 @@ componentDidMount(){
 
     {this.state.responses  < this.state.amount &&
   this.state.setFlashcards.length >0 && this.state.setFlashcards.map(({question,answers,correct,questionId},index)=>{
-    return( 
-             
-           <QuestionBox question={question}  options={answers} key={questionId}
-           
+    return(              
+           <QuestionBox question={question}  options={answers} key={questionId}           
            qId={questionId}  
            selected={opt=>this.computeAnswer(opt,correct,index)}
-            />     
-      
+            />           
       )
     
     }

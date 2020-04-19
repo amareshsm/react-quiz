@@ -75,15 +75,15 @@
   cursor: pointer;
 }
 
-
 .AnswerSelected{
     font-size: 12px;
     margin-top: 8px;
+    display: flex;
+    justify-content: space-evenly;
     font-weight: bold;
     color: rgb(0, 0, 255);
     text-transform: uppercase;
 }
-
 
 body {
   background-color: lavender;
@@ -102,7 +102,6 @@ body {
   gap:1rem;
 }
 
-
 .card {
   display: flex;
   justify-content: center;
@@ -116,7 +115,6 @@ body {
   transition: 180ms;
   cursor: pointer;
 }
-
 .card:hover {
   --translate-y: -2px;
   box-shadow: 0 0 5px 3px rgb(0, 0, 0, 0.6);
@@ -128,7 +126,6 @@ body {
 .card .front{
   left: 0;
 }
-
 .card .front,
 .card .back {
   position: absolute;
@@ -228,7 +225,6 @@ input[type=radio]:not(old) + label > span{
   vertical-align   : bottom;
   cursor: pointer;
 }
-
 
 input[type=radio]:not(old):checked + label > span > span{
   display : block; 

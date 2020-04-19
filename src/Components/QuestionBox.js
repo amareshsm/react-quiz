@@ -15,8 +15,7 @@ const QuestionBox = ({question, options, selected,qId}) => {
           }}
           value={text}
         />
-                <label htmlFor={qId+text+index}><span><span></span></span>{text}</label>
-
+        <label htmlFor={qId+text+index}><span><span></span></span>{text}</label>
         </div>
       ))}
     </div>
