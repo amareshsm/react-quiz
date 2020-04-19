@@ -1,11 +1,7 @@
 import React, {useState} from "react";
 
 const QuestionBox = ({question, options, selected,qId}) => {
-  
-
-  console.log(qId);
   const [answer, setAnswer] = useState(options);
- // const [opt,setOpt]=useState([])
   return (
     <div className="questionBox">
       <div className="question">{question}</div>

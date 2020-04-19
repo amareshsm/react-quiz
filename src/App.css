@@ -76,6 +76,15 @@
 }
 
 
+.AnswerSelected{
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: rgb(0, 0, 255);
+    text-transform: uppercase;
+}
+
+
 body {
   background-color: lavender;
   margin: 0;

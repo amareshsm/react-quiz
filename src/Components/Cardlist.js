@@ -10,8 +10,7 @@ export default function Cardlist({flashcards}){
                    })
 
                }
-
-               
+              
             </div>
         </div>
     )

@@ -42,7 +42,6 @@ computeAnswer =(opt,correctAnswer,index)=>{
   this.setState({
   setFlashcards:tempArray
   });
-  console.log(this.state.setFlashcards)
   if(opt === correctAnswer){
     this.setState({
       score: this.state.score + 1,      
@@ -97,7 +96,6 @@ Reteset=()=>{
   axios.get('https://opentdb.com/api.php',{params:{
     amount:document.getElementById('amount').value,
     category:document.getElementById('category').value
-
   }})
 .then((res)=>{
   this.setState({ 
@@ -115,6 +113,10 @@ Reteset=()=>{
    })  
  })
  })
+this.setState({
+  showSubmitButton:true
+})
+
 }
 
 getCategories=()=>{
