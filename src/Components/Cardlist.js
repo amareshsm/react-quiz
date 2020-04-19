@@ -8,7 +8,10 @@ export default function Cardlist({flashcards}){
                    flashcards.map(flashcard=>{
                        return <Card flashcard={flashcard}  key={flashcard.questionId} />
                    })
+
                }
+
+               
             </div>
         </div>
     )

@@ -8,8 +8,6 @@
   border-radius: 10px;
   padding: 3px;
   margin-top: 70px;
-
-
 }
 
 .title {
@@ -78,12 +76,10 @@
 }
 
 
-
 body {
   background-color: lavender;
   margin: 0;
 }
-
 
 .answers{
   max-width: -webkit-fill-available;
@@ -175,20 +171,25 @@ margin-bottom: .25rem;
 }
 
 .btn{
-  background-color: rgb(46, 182, 46);
+  background-color : rgb(68, 143, 255);
   border-radius: 4px;
   color:white;
   border: none;
+  font-size: 13px;
+  border: 2px solid rgb(68, 143, 255);
   cursor: pointer;
   outline: none;
   padding: .5rem;
 }
 
 .btn:hover{
-  background-color: rgb(18, 185, 18);
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(68, 143, 255);
+  color: rgb(68, 143, 255);
+  font-weight: bolder;
 }
 input[type=radio   ]:not(old){
-  width     : 2em;
+  width     : 30px;
   margin    : 0;
   padding   : 0;
   font-size : 1em;
@@ -199,49 +200,39 @@ input[type=radio   ]:not(old){
 input[type=radio   ]:not(old) + label{
   display      : inline-block;
   margin-left  : -2em;
-  line-height  : 1.5em;
+  cursor: pointer;
+  line-height  : 1.6em;
 }
 
 input[type=radio] + label > span{
  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.2);
 }
 
-input[type=radio   ]:not(old) + label > span{
+input[type=radio]:not(old) + label > span{
   display          : inline-block;
-  width            : 0.875em;
-  height           : 0.875em;
+  width            : 18px;
+  border-radius: 3px;
+  height           : 18px;
+  position: relative;
   margin           : 0.25em 0.5em 0.25em 0.25em;
-  border           : 0.0625em solid rgb(192,192,192);
-  background       : rgb(224,224,224);
-  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background       : rgb(68, 143, 255);
   vertical-align   : bottom;
+  cursor: pointer;
 }
-
-input[type=radio   ]:not(old):checked + label > span{
-  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
-}
-
 
 
 input[type=radio]:not(old):checked + label > span > span{
-  display          : block;
-  width            : 0.5em;
-  height           : 0.5em;
-  margin           : 0.125em;
-  border-radius: 50%;
-  border           : 0.0625em solid rgb(115,153,77);
-  background       : rgb(153,204,102);
-  background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  display : block; 
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4.5px;
+  height: 10px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
 }

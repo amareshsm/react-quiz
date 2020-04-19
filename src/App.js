@@ -60,7 +60,8 @@ playAgain=()=>{
     responses:0,
     setFlashcards:[],
     setCategories:[],
-    DisplayAnswers:false
+    DisplayAnswers:false,
+  
   });
 };
 
@@ -79,7 +80,8 @@ submitAnswers=()=>{
 Reteset=()=>{  
   this.setState({
     score:0,
-    responses:0
+    responses:0,
+    showSubmitButton:true
     
   });
   
@@ -166,7 +168,7 @@ componentDidMount(){
              
            <QuestionBox question={question}  options={answers} key={questionId}
            
-           questionid={questionId}  
+           qId={questionId}  
            selected={opt=>this.computeAnswer(opt,correct,index)}
             />     
       
