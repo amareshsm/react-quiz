@@ -37,7 +37,7 @@ export default function Card({flashcard}){
                        return <div className="flashcard-option" key={index}>{answers}</div>
                    })}
                 </div>
-
+               Answer Selected : {flashcard.selected}
             </div>
              <div className="back" ref={backEl}>
                  {flashcard.correct}

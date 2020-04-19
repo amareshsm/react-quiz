@@ -14,7 +14,9 @@ class  App extends Component{
     setFlashcards:[],
     setCategories:[],
     amount:10,
-    DisplayAnswers:false
+    DisplayAnswers:false,
+    QuesWithAns:[],
+    showSubmitButton:true
   };
 
   this.computeAnswer=this.computeAnswer.bind(this);
@@ -27,19 +29,28 @@ class  App extends Component{
 
 ShowAnswers=()=>{
   this.setState({
-    DisplayAnswers:true
+    DisplayAnswers:true,
+    showSubmitButton:false
   })
 }
 
-computeAnswer =(answer,correctAnswer)=>{
-  if(answer === correctAnswer){
+computeAnswer =(opt,correctAnswer,index)=>{
+   
+  var tempArray = JSON.parse(JSON.stringify(this.state)).setFlashcards;
+  tempArray[index]['selected'] = opt;
+
+  this.setState({
+  setFlashcards:tempArray
+  });
+  console.log(this.state.setFlashcards)
+  if(opt === correctAnswer){
     this.setState({
-      score: this.state.score + 1 
+      score: this.state.score + 1,      
     })
   }
-  this.setState({
-    responses:this.state.responses < this.state.amount ? this.state.responses+1 : this.state.amount
-  })
+  //this.setState({
+    //responses:this.state.responses < this.state.amount ? this.state.responses+1 : this.state.amount
+  //})
 }
 
 playAgain=()=>{
@@ -59,13 +70,19 @@ decodeString=(str)=>{
   return textArea.value;
 }
 
+submitAnswers=()=>{
+  this.setState({
+    responses:this.state.amount
+  })
+}
 
 Reteset=()=>{  
   this.setState({
     score:0,
     responses:0
+    
   });
-  console.log(this.state.score,this.state.responses)
+  
 }
 
  handleSubmit(e){
@@ -90,11 +107,12 @@ Reteset=()=>{
        questionId:`${index}-${Date.now()}`,
        question:this.decodeString(questionItem.question),
        correct :this.decodeString(questionItem.correct_answer),       
-       answers:options.sort(()=> Math.random() - 0.5)
+       answers:options.sort(()=> Math.random() - 0.5),
+       selected:''
     }
    })  
  })
-})
+ })
 }
 
 getCategories=()=>{
@@ -143,23 +161,28 @@ componentDidMount(){
    </div>: null }
 
     {this.state.responses  < this.state.amount &&
-  this.state.setFlashcards.length >0 && this.state.setFlashcards.map(({question,answers,correct,questionId})=>{
+  this.state.setFlashcards.length >0 && this.state.setFlashcards.map(({question,answers,correct,questionId},index)=>{
     return( 
-      
+             
            <QuestionBox question={question}  options={answers} key={questionId}
            
-           selected={answer=>this.computeAnswer(answer,correct)}
+           questionid={questionId}  
+           selected={opt=>this.computeAnswer(opt,correct,index)}
             />     
       
       )
     
     }
   )}
+  {this.state.setFlashcards.length>0 && this.state.showSubmitButton ? (<div><button onClick={this.submitAnswers}>SUBMIT</button></div>):null}
 
   {this.state.responses === this.state.amount ? (<Result  score={this.state.score} amount={this.state.amount} playAgain={this.playAgain}
   
   ShowAnswers={this.ShowAnswers}  RetakeTest={this.Reteset}
     />) : null}
+
+
+
     </div>
 
     </>
