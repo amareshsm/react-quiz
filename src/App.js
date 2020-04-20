@@ -3,6 +3,7 @@ import './App.css';
 import QuestionBox from './Components/QuestionBox'
 import Result from './Components/Result'
 import axios from 'axios'
+import Loader from './Components/Loader'
 import Cardlist from './Components/Cardlist'
 
 class  App extends Component{
@@ -16,7 +17,8 @@ class  App extends Component{
     amount:10,
     DisplayAnswers:false,
     QuesWithAns:[],
-    showSubmitButton:true
+    showSubmitButton:true,
+    loading:false
   };
 
   this.computeAnswer=this.computeAnswer.bind(this);
@@ -47,9 +49,7 @@ computeAnswer =(opt,correctAnswer,index)=>{
       score: this.state.score + 1,      
     })
   }
-  //this.setState({
-    //responses:this.state.responses < this.state.amount ? this.state.responses+1 : this.state.amount
-  //})
+
 }
 
 playAgain=()=>{
@@ -80,18 +80,20 @@ Reteset=()=>{
   this.setState({
     score:0,
     responses:0,
-    showSubmitButton:true
-    
+    showSubmitButton:true    
   });
   
 }
 
  handleSubmit(e){
+  console.log(this.state.setCategories)
 
   this.setState({
     amount:Number(document.getElementById('amount').value),
-    DisplayAnswers:false
+    DisplayAnswers:false,
+    loading:true
   })
+
   e.preventDefault();
   axios.get('https://opentdb.com/api.php',{params:{
     amount:document.getElementById('amount').value,
@@ -110,11 +112,15 @@ Reteset=()=>{
        answers:options.sort(()=> Math.random() - 0.5),
        selected:''
     }
-   })  
+   }),
+   loading:false
  })
  })
+
 this.setState({
-  showSubmitButton:true
+  showSubmitButton:true,
+  score:0,
+  responses:0
 })
 }
 
@@ -126,6 +132,7 @@ getCategories=()=>{
 
     })
   })
+
 }
 
 componentDidMount(){
@@ -156,8 +163,11 @@ componentDidMount(){
 
     <div className="container">
     <div  className="title">Quiz Test</div>
-    
-{this.state.DisplayAnswers===true ?<div className="answers">
+    {this.state.loading ?  <div style={{marginTop:"80px"}}>
+      <Loader></Loader>
+    </div> : (
+      <>
+{this.state.DisplayAnswers===true ? <div className="answers">
     <Cardlist flashcards={this.state.setFlashcards}/>
    </div>: null }
 
@@ -173,7 +183,8 @@ componentDidMount(){
     }
   )}
   {this.state.setFlashcards.length>0 && this.state.showSubmitButton ? (<div><button onClick={this.submitAnswers}>SUBMIT</button></div>):null}
-
+</>
+  )}
   {this.state.responses === this.state.amount ? (<Result  score={this.state.score} amount={this.state.amount} playAgain={this.playAgain}
   
   ShowAnswers={this.ShowAnswers}  RetakeTest={this.Reteset}
