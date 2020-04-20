@@ -82,12 +82,9 @@ Reteset=()=>{
     responses:0,
     showSubmitButton:true    
   });
-  
 }
 
  handleSubmit(e){
-  console.log(this.state.setCategories)
-
   this.setState({
     amount:Number(document.getElementById('amount').value),
     DisplayAnswers:false,
