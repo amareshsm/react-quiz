@@ -129,7 +129,6 @@ getCategories=()=>{
 
     })
   })
-
 }
 
 componentDidMount(){

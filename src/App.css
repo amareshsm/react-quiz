@@ -3,13 +3,11 @@
 * {
   font-family: "Raleway", sans-serif;
 }
-
 .container {
   border-radius: 10px;
   padding: 3px;
   margin-top: 70px;
 }
-
 .title {
   position: relative;
   background-color: rgba(0, 0, 0, 1);
@@ -18,13 +16,11 @@
   font-size: 1.6em;
   border-radius: 5px;
 }
-
 .question {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 5px;
 }
-
 .questionBox {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -33,7 +29,6 @@
   box-sizing: border-box;
   background-color: rgb(250, 250, 250);
 }
-
 .answerBtn {
   position: relative;
   padding: 10px;
@@ -84,9 +79,8 @@
     color: rgb(0, 0, 255);
     text-transform: uppercase;
 }
-
 body {
-  background-color: lavender;
+  background-color: linen;
   margin: 0;
 }
 
@@ -149,7 +143,6 @@ body {
 #gategory{
   width: 150px;
 }
-
 .header{
   display: flex;
   position: fixed;
@@ -163,19 +156,16 @@ body {
   box-shadow: 0 0 4px 2px rgb(0, 0, 0, 0.2);
   padding: 0 1.3rem;
 }
-
 .form-group{
   display: flex;
   flex-direction: column;
   margin: .5rem;
 }
-
 .form-group > label{
 color:darkslategray;
 font-size: .75rem;
 margin-bottom: .25rem;
 }
-
 .btn{
   background-color : rgb(68, 143, 255);
   border-radius: 4px;
@@ -187,7 +177,6 @@ margin-bottom: .25rem;
   outline: none;
   padding: .5rem;
 }
-
 .btn:hover{
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(68, 143, 255);
@@ -201,7 +190,6 @@ input[type=radio   ]:not(old){
   font-size : 1em;
   opacity   : 0;
 }
-
 
 input[type=radio   ]:not(old) + label{
   display      : inline-block;

@@ -9,8 +9,7 @@ const Result = ({score,amount, playAgain,ShowAnswers,RetakeTest}) => (
     </button>
     <button className="option_btns" onClick={ShowAnswers}>
       Show Answers
-    </button>
-    
+    </button>    
     <button className="option_btns" onClick={RetakeTest}>
       Retest
     </button>
