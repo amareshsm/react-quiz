@@ -69,7 +69,6 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
 .AnswerSelected{
     font-size: 12px;
     margin-top: 8px;
@@ -80,22 +79,19 @@
     text-transform: uppercase;
 }
 body {
-  background-color: linen;
+  background-color: rgb(243, 243, 243);
   margin: 0;
 }
-
 .answers{
   max-width: -webkit-fill-available;
   margin: 1rem 2rem;
 }
-
 .card-grid{
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fill,minmax(240px, 1fr));
   gap:1rem;
 }
-
 .card {
   display: flex;
   justify-content: center;
