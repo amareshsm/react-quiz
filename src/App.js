@@ -72,7 +72,8 @@ decodeString=(str)=>{
 
 submitAnswers=()=>{
   this.setState({
-    responses:this.state.amount
+    responses:this.state.amount,
+    showSubmitButton:false
   })
 }
 
@@ -153,7 +154,7 @@ componentDidMount(){
    </div>
 
    <div className="form-group">
-         <button  className="btn">Generate</button>
+         <button  className="option_btns" >GENERATE</button>
    </div>
  </form>
 
@@ -178,7 +179,7 @@ componentDidMount(){
     
     }
   )}
-  {this.state.setFlashcards.length>0 && this.state.showSubmitButton ? (<div><button onClick={this.submitAnswers}>SUBMIT</button></div>):null}
+  {this.state.setFlashcards.length>0 && this.state.showSubmitButton ? (<div><button className="option_btns" onClick={this.submitAnswers}>SUBMIT</button></div>):null}
 </>
   )}
   {this.state.responses === this.state.amount ? (<Result  score={this.state.score} amount={this.state.amount} playAgain={this.playAgain}

@@ -59,7 +59,7 @@
 
 .option_btns {
   font-size: 15px;
-  padding: 10px;
+  padding: 8px;
   background-color: rgb(46, 182, 46);
   color: rgb(255, 255, 255);
   width: 150px;
@@ -162,23 +162,7 @@ color:darkslategray;
 font-size: .75rem;
 margin-bottom: .25rem;
 }
-.btn{
-  background-color : rgb(68, 143, 255);
-  border-radius: 4px;
-  color:white;
-  border: none;
-  font-size: 13px;
-  border: 2px solid rgb(68, 143, 255);
-  cursor: pointer;
-  outline: none;
-  padding: .5rem;
-}
-.btn:hover{
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(68, 143, 255);
-  color: rgb(68, 143, 255);
-  font-weight: bolder;
-}
+
 input[type=radio   ]:not(old){
   width     : 30px;
   margin    : 0;
