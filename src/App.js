@@ -139,7 +139,17 @@ componentDidMount(){
   render(){ 
   return (
   <>
-    <form className="header" onSubmit={this.handleSubmit}>
+   <div className="header">
+          <div>NAVIGATION BAR </div>
+   </div>
+
+
+
+    <div className="container">
+    <div  className="title">Quiz Test</div>
+
+    
+    <form  onSubmit={this.handleSubmit}>
     <div className="form-group">
       <label htmlFor="category">Category</label>
       <select id="category" >
@@ -157,9 +167,6 @@ componentDidMount(){
          <button  className="option_btns" >GENERATE</button>
    </div>
  </form>
-
-    <div className="container">
-    <div  className="title">Quiz Test</div>
     {this.state.loading ?  <div style={{marginTop:"80px"}}>
       <Loader></Loader>
     </div> : (
